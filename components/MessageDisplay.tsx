@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 interface MessageDisplayProps {
@@ -6,14 +6,14 @@ interface MessageDisplayProps {
     icon?: string;
 }
 
-const MessageDisplay = ({ message, icon }: MessageDisplayProps) => {
+const MessageDisplay = memo(({ message, icon }: MessageDisplayProps) => {
     return (
         <View style={styles.container}>
             {icon && <Text style={styles.icon}>{icon}</Text>}
             <Text style={styles.message}>{message}</Text>
         </View>
     );
-};
+});
 
 const styles = StyleSheet.create({
     container: {

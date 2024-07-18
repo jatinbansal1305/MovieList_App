@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import { COLORS, LAYOUT, TYPOGRAPHY } from "../constants/constants";
 
@@ -7,7 +7,7 @@ interface SearchBarProps {
     value: string;
 }
 
-const SearchBar = ({ onSearch, value }: SearchBarProps) => {
+const SearchBar = memo(({ onSearch, value }: SearchBarProps) => {
     return (
         <View style={styles.container}>
             <TextInput
@@ -19,7 +19,7 @@ const SearchBar = ({ onSearch, value }: SearchBarProps) => {
             />
         </View>
     );
-};
+});
 
 const styles = StyleSheet.create({
     container: {

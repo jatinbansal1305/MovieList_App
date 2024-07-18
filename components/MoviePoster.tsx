@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { Image, View, Text, StyleSheet } from "react-native";
 import { COLORS, LAYOUT } from '../constants/constants';
 
@@ -7,7 +7,7 @@ interface MoviePosterProps {
     title: string;
 }
 
-const MoviePoster = ({ posterPath, title }: MoviePosterProps) => {
+const MoviePoster = memo(({ posterPath, title }: MoviePosterProps) => {
     const [imageError, setImageError] = useState(false);
 
     if (!posterPath || imageError) {
@@ -25,7 +25,7 @@ const MoviePoster = ({ posterPath, title }: MoviePosterProps) => {
             onError={() => setImageError(true)}
         />
     );
-};
+});
 
 const styles = StyleSheet.create({
     image: {

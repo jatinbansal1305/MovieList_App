@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import {
     FlatList,
     Image,
@@ -18,7 +18,7 @@ interface MovieGridProps {
     movies: Movie[];
 }
 
-const MovieGrid = ({ movies }: MovieGridProps) => {
+const MovieGrid = memo(({ movies }: MovieGridProps) => {
     const renderItem = ({ item }: { item: Movie }) => (
         <View style={styles.movieItem}>
             <MoviePoster posterPath={item.poster_path} title={item.title} />
@@ -38,7 +38,7 @@ const MovieGrid = ({ movies }: MovieGridProps) => {
             contentContainerStyle={styles.gridContainer}
         />
     );
-};
+});
 
 const styles = StyleSheet.create({
     gridContainer: {

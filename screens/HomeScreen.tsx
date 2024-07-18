@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, memo } from "react";
 import { SafeAreaView, StyleSheet, Text, View, ActivityIndicator, TouchableOpacity } from "react-native";
 import { debounce } from 'lodash';
 import GenreFilter from "../components/GenreFilter";
@@ -12,7 +12,7 @@ import { Genre } from "../types";
 import { useMovies } from "../hooks/useMovies";
 import MessageDisplay from "../components/MessageDisplay";
 
-const HomeScreen = () => {
+const HomeScreen = memo(() => {
     const [selectedGenres, setSelectedGenres] = useState<number[]>([]);
     const [searchQuery, setSearchQuery] = useState<string>("");
     const [debouncedSearchQuery, setDebouncedSearchQuery] = useState<string>("");
@@ -101,7 +101,7 @@ const HomeScreen = () => {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <View style={styles.titleContainer}>
                 <MoviefixLogo />
             </View>
@@ -117,9 +117,9 @@ const HomeScreen = () => {
                 selectedGenres={selectedGenres}
                 searchQuery={debouncedSearchQuery}
             />
-        </SafeAreaView>
+        </View>
     );
-};
+});
 const styles = StyleSheet.create({
     container: {
         flex: 1,

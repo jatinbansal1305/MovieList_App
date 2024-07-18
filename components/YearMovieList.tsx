@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useMemo } from "react";
+import React, { useCallback, useRef, useMemo, memo } from "react";
 import {
     View,
     Text,
@@ -23,7 +23,7 @@ interface YearData {
     movies: Movie[];
 }
 
-const YearMovieList = ({ selectedGenres, searchQuery }: YearMovieListProps) => {
+const YearMovieList = memo(({ selectedGenres, searchQuery }: YearMovieListProps) => {
     const flatListRef = useRef<FlatList<YearData>>(null);
     const lastOffsetY = useRef<number>(0);
 
@@ -127,7 +127,7 @@ const YearMovieList = ({ selectedGenres, searchQuery }: YearMovieListProps) => {
             onScrollToIndexFailed={onScrollToIndexFailed}
         />
     );
-};
+});
 
 const styles = StyleSheet.create({
     yearContainer: {

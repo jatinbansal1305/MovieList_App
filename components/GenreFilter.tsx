@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from "react";
+import React, { memo, useCallback, useMemo } from "react";
 import {
     ScrollView,
     TouchableOpacity,
@@ -17,7 +17,7 @@ interface GenreFilterProps {
     disabled: boolean;
 }
 
-const GenreFilter = ({
+const GenreFilter = memo(({
     onGenreChange,
     selectedGenres,
     disabled,
@@ -69,12 +69,13 @@ const GenreFilter = ({
             ))}
         </ScrollView>
     );
-};
+});
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: LAYOUT.PADDING,
         marginBottom: LAYOUT.PADDING,
         maxHeight: 64,
+        paddingVertical : 8
     },
     disabledContainer: {
         opacity: 0.5,
