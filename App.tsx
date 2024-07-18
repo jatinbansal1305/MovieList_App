@@ -2,7 +2,8 @@ import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import HomeScreen from './screens/HomeScreen';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import { COLORS } from './constants/constants';
 
 const queryClient = new QueryClient();
 
@@ -18,5 +19,11 @@ const App = () => {
     </QueryClientProvider>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+      flex: 1,
+      backgroundColor: COLORS.BACKGROUND,
+  },
 
 export default App;
