@@ -11,7 +11,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <SafeAreaProvider>
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
           <HomeScreen />
         </SafeAreaView>
       </SafeAreaProvider>
@@ -22,8 +22,9 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-      flex: 1,
-      backgroundColor: COLORS.BACKGROUND,
+    flex: 1,
+    backgroundColor: COLORS.BACKGROUND,
   },
+});
 
 export default App;
