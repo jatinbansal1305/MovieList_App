@@ -1,0 +1,36 @@
+export const API_KEY = '2dca580c2a14b55200e784d157207b4d';
+export const BASE_URL = 'https://api.themoviedb.org/3';
+
+export const INITIAL_YEAR = 2012;
+export const ITEM_HEIGHT = 1000;
+
+export const COLORS = {
+  PRIMARY: '#FF4136',
+  BACKGROUND: '#121212',
+  TEXT: '#FFFFFF',
+  TEXT_SECONDARY: '#AAAAAA',
+  BUTTON: '#484848',
+  BUTTON_SELECTED: '#FF4136',
+  INPUT_BACKGROUND: '#222',
+  INPUT_TEXT: '#FFFFFF',
+  INPUT_PLACEHOLDER: '#888',
+  POSTER_FALLBACK: '#2C3E50',
+  POSTER_FALLBACK_TEXT: '#ECF0F1',
+  ERROR: '#FF4136',
+};
+
+export const LAYOUT = {
+  PADDING: 16,
+  BORDER_RADIUS: 8,
+};
+
+export const TYPOGRAPHY = {
+  TITLE_FONT_SIZE: 24,
+  BODY_FONT_SIZE: 14,
+  SMALL_FONT_SIZE: 12,
+};
+
+export const NETWORK = {
+  RETRY_ATTEMPTS: 3,
+  TIMEOUT: 10000,
+};
